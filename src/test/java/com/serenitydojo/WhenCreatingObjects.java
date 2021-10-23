@@ -1,6 +1,5 @@
 package com.serenitydojo;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -30,7 +29,7 @@ public class WhenCreatingObjects {
     @Test
     public void creating_a_hampster() {
 
-        Hampster rusty = new Hampster("Rusty","Wheel",1);
+        Hamster rusty = new Hamster("Rusty","Wheel",1);
 
         assertEquals(rusty.getName(),"Rusty");
         assertEquals(rusty.getFavoriteGame(),"Wheel");
@@ -56,7 +55,7 @@ public class WhenCreatingObjects {
     public void pets_make_noise() {
         Pet felix = new Cat("Felix",4);
         Pet fido = new Dog("Fido", "bone", 5);
-        Pet rusty = new Hampster("Rusty", "wheels", 1);
+        Pet rusty = new Hamster("Rusty", "wheels", 1);
 
         System.out.println("Felix goes " + felix.makeNoise());
         System.out.println("Fido goes " + fido.makeNoise());
@@ -68,7 +67,7 @@ public class WhenCreatingObjects {
 
         Pet felix = new Cat("Felix",4);
         Pet fido = new Dog("Fido", "bone", 5);
-        Pet rusty = new Hampster("Rusty", "wheels", 1);
+        Pet rusty = new Hamster("Rusty", "wheels", 1);
 
         assertEquals(felix.play(), "plays with string");
         assertEquals(fido.play(), "plays with bone");
