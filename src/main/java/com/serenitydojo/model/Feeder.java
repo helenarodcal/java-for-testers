@@ -1,5 +1,7 @@
 package com.serenitydojo.model;
 
+import static com.serenitydojo.model.FoodType.*;
+
 public class Feeder {
     public String feeds_DONOTUSE(String animal, boolean isPremium) {
 
@@ -21,7 +23,7 @@ public class Feeder {
 
 
     }
-    public String feeds(AnimalType animal, boolean isPremium) {
+    public String feeds_OLD(AnimalType animal, boolean isPremium) {
 
         //if instead of assigning a value to a variable we would do a return at each level,
         // break statement wouldn't be necessary, because it stops the execution
@@ -41,5 +43,19 @@ public class Feeder {
         }
 
         return food;
+    }
+    public FoodType feeds(AnimalType animal, boolean isPremium) {
+
+        switch (animal) {
+            case CAT:
+                return  (isPremium) ? SALMON : TUNA;
+            case DOG:
+                return  (isPremium) ? DELUXE_DOG_FOOD : DOG_FOOD;
+            case HAMSTER:
+                return  (isPremium) ? LETTUCE : CABBAGE;
+            default:
+                return  UNKNOWN;
+        }
+
     }
 }
