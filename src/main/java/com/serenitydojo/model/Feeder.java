@@ -13,10 +13,12 @@ public class Feeder {
             return(isPremium) ? "Salmon" : "Tuna";
 
         }else if (animal.equals("Dog")){
-            return "Meat";
+            return (isPremium) ? "Deluxe Dog Food" : "Dog Food";
         } /*else{
             return "Cabbage";
         }*/
-        return "Cabbage";
+        return (isPremium) ? "Lettuce" : "Cabbage";
+
+
     }
 }
