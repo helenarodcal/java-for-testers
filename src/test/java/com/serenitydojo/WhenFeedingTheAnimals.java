@@ -1,8 +1,11 @@
 package com.serenitydojo;
 
+import com.serenitydojo.model.AnimalType;
 import com.serenitydojo.model.Feeder;
 import org.junit.Assert;
 import org.junit.Test;
+
+import static com.serenitydojo.model.AnimalType.*;
 
 public class WhenFeedingTheAnimals {
 
@@ -10,7 +13,7 @@ public class WhenFeedingTheAnimals {
     public void shouldFeedCatsTuna() {
         Feeder feeder = new Feeder();
 
-        String food = feeder.feeds("Cat", false);
+        String food = feeder.feeds(CAT, false);
 
         Assert.assertEquals("Tuna", food);
 //        System.out.println(food);
@@ -20,7 +23,7 @@ public class WhenFeedingTheAnimals {
     public void shouldFeedHamstersCabbage() {
         Feeder feeder = new Feeder();
 
-        String food = feeder.feeds("Hamster", false);
+        String food = feeder.feeds(HAMSTER, false);
 
         Assert.assertEquals("Cabbage", food);
     }
@@ -29,7 +32,7 @@ public class WhenFeedingTheAnimals {
     public void shouldFeedDogsDogFood() {
         Feeder feeder = new Feeder();
 
-        String food = feeder.feeds("Dog", false);
+        String food = feeder.feeds(DOG, false);
 
         Assert.assertEquals("Dog Food", food);
     }
@@ -38,7 +41,7 @@ public class WhenFeedingTheAnimals {
     public void shouldFeedPremiumCatsPremiumFood() {
         Feeder feeder = new Feeder();
 
-        String food = feeder.feeds("Cat", true);
+        String food = feeder.feeds(CAT, true);
 
         Assert.assertEquals("Salmon", food);
 
@@ -48,7 +51,7 @@ public class WhenFeedingTheAnimals {
     public void shouldFeedPremiumDogsDeluxeDogFood() {
         Feeder feeder = new Feeder();
 
-        String food = feeder.feeds("Dog", true);
+        String food = feeder.feeds(DOG, true);
 
         Assert.assertEquals("Deluxe Dog Food", food);
 
@@ -58,7 +61,7 @@ public class WhenFeedingTheAnimals {
     public void shouldFeedPremiumHamstersLettuce() {
         Feeder feeder = new Feeder();
 
-        String food = feeder.feeds("Hamster", true);
+        String food = feeder.feeds(HAMSTER, true);
 
         Assert.assertEquals("Lettuce", food);
 
