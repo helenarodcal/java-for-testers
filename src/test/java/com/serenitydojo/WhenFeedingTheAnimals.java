@@ -6,13 +6,7 @@ import com.serenitydojo.model.FoodType;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
 import static com.serenitydojo.model.AnimalType.*;
-import static com.serenitydojo.model.FoodType.*;
 
 public class WhenFeedingTheAnimals {
 
@@ -22,8 +16,7 @@ public class WhenFeedingTheAnimals {
 
         FoodType food = feeder.feeds(CAT, false);
 
-        Assert.assertEquals(TUNA, food);
-//        System.out.println(food);
+        Assert.assertEquals(FoodType.TUNA, food);
     }
 
     @Test
@@ -32,7 +25,7 @@ public class WhenFeedingTheAnimals {
 
         FoodType food = feeder.feeds(HAMSTER, false);
 
-        Assert.assertEquals(CABBAGE, food);
+        Assert.assertEquals(FoodType.CABBAGE, food);
     }
 
     @Test
@@ -41,7 +34,7 @@ public class WhenFeedingTheAnimals {
 
         FoodType food = feeder.feeds(DOG, false);
 
-        Assert.assertEquals(DOG_FOOD, food);
+        Assert.assertEquals(FoodType.DOG_FOOD, food);
     }
 
     @Test
@@ -50,8 +43,7 @@ public class WhenFeedingTheAnimals {
 
         FoodType food = feeder.feeds(CAT, true);
 
-        Assert.assertEquals(SALMON, food);
-
+        Assert.assertEquals(FoodType.SALMON, food);
     }
 
     @Test
@@ -60,8 +52,7 @@ public class WhenFeedingTheAnimals {
 
         FoodType food = feeder.feeds(DOG, true);
 
-        Assert.assertEquals(DELUXE_DOG_FOOD, food);
-
+        Assert.assertEquals(FoodType.DELUXE_DOG_FOOD, food);
     }
 
     @Test
@@ -70,7 +61,7 @@ public class WhenFeedingTheAnimals {
 
         FoodType food = feeder.feeds(HAMSTER, true);
 
-        Assert.assertEquals(LETTUCE, food);
-
+        Assert.assertEquals(FoodType.LETTUCE, food);
     }
+
 }
