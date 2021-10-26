@@ -1,49 +1,34 @@
 package com.serenitydojo.exceptions;
 
-import org.assertj.core.api.Assertions;
 import org.junit.Test;
-
-import java.io.IOException;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class WhenWorkingWithExceptions {
 
-    WordCounter wordCounter = new WordCounter();
-
     @Test
-    public void should_count_the_words_in_a_string() {
+    public void shouldShowTheLengthOfAString() {
+        StringProcessor stringProcessor = new StringProcessor();
 
-        int numberOfWords = wordCounter.numberOfWordsIn("some string");
+        String result = stringProcessor.showLengthOf("some string");
 
-        assertThat(numberOfWords).isEqualTo(2);
-    }
-
-    //checking the null value, now that we know it failes with an empty string
-    @Test
-    public void should_return_zero_for_a_null_string() {
-
-        assertThat(wordCounter.numberOfWordsIn(null)).isEqualTo(0);
+        assertThat(result).isEqualTo("some string has a length of 11");
     }
 
     @Test
-    public void should_count_words_in_a_file() throws Exception{
+    public void shouldShowZeroForNullStrings() {
 
-        int numberOfWords = wordCounter.numberOfWordsInFile("src/main/resources/hello.txt");
+        StringProcessor stringProcessor = new StringProcessor();
 
-        assertThat(numberOfWords).isEqualTo(2);
+        String result = stringProcessor.showLengthOf(null);
+
+        assertThat(result).isEqualTo("null has a length of 0");
     }
 
-    @Test(expected = FileHasNoWordsException.class)
-    public void should_report_an_error_if_the_file_does_not_exist() throws Exception{
+    @Test(expected = TestEnvironmentUnavailableException.class)
+    public void shouldFindThePort() {
+        StringProcessor stringProcessor = new StringProcessor();
 
-       int numberOfWords = wordCounter.numberOfWordsInFile("file-that-does-not-exist.txt");
-       assertThat(numberOfWords).isEqualTo(0);
-    }
-
-    @Test(expected = FileHasNoWordsException.class)
-    public void should_throw_meaningful_exception_if_there_are_no_words_in_the_file() throws Exception {
-       assertThat(wordCounter.numberOfWordsInFile("src/main/resources/no_words.txt")).isEqualTo(0);
-
+        stringProcessor.getPortOf("A:https://www.google.com");
     }
 }
