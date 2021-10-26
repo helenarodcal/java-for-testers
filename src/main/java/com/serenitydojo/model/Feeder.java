@@ -44,6 +44,7 @@ public class Feeder {
 
         return food;
     }
+
     public FoodType feeds(AnimalType animal, boolean isPremium) {
 
         switch (animal) {

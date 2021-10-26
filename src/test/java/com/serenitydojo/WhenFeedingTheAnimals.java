@@ -6,6 +6,11 @@ import com.serenitydojo.model.FoodType;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import static com.serenitydojo.model.AnimalType.*;
 import static com.serenitydojo.model.FoodType.*;
 
