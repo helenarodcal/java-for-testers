@@ -1,8 +1,5 @@
-package com.serenitydojo.assertiondemo;
+package com.serenitydojo.assertions;
 
-import org.assertj.core.api.Assertions;
-import org.assertj.core.api.SoftAssertions;
-import org.assertj.core.api.SoftAssertionsRule;
 import org.assertj.core.data.Percentage;
 import org.junit.Assert;
 import org.junit.Test;
